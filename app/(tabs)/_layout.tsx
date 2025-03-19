@@ -26,6 +26,7 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}>
+      {/* Existing Tab One Screen */}
       <Tabs.Screen
         name="index"
         options={{
@@ -47,11 +48,22 @@ export default function TabLayout() {
           ),
         }}
       />
+      
+      {/* Existing Chat Tab */}
       <Tabs.Screen
         name="chat"
         options={{
-          headerShown : false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="comment" color={color} />,
+        }}
+      />
+      
+      {/* New Swipe Tab */}
+      <Tabs.Screen
+        name="swipe"
+        options={{
+          title: 'Swipe',
+          tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />, // You can change the icon to something more fitting
         }}
       />
     </Tabs>
