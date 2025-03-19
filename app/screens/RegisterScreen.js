@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
-import RegisterForm from '../components/RegisterForm';
-import { auth, db } from '../firebaseConfig';
+import RegisterForm from '../../components/RegisterForm';
+import { auth, db } from '../../config/firebaseConfig';
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
