@@ -63,6 +63,15 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />, // You can change the icon to something more fitting
         }}
       />
+
+      <Tabs.Screen
+        name="register"
+        options={{
+          title: 'Register',
+          tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />, 
+        }}
+      />
+      
     </Tabs>
   );
 }
