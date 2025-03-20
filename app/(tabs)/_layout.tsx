@@ -26,7 +26,6 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}>
-      {/* Existing Tab One Screen */}
       <Tabs.Screen
         name="index"
         options={{
@@ -49,7 +48,6 @@ export default function TabLayout() {
         }}
       />
       
-      {/* Existing Chat Tab */}
       <Tabs.Screen
         name="chat"
         options={{
@@ -58,7 +56,6 @@ export default function TabLayout() {
         }}
       />
       
-      {/* New Swipe Tab */}
       <Tabs.Screen
         name="swipe"
         options={{

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Image } from 'react-native';  // Added Image import
 import { db } from '@/config/firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 
-export default function TabSwipeScreen() {
+export default function Swipe() {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +28,7 @@ export default function TabSwipeScreen() {
         }
 
         const randomUser = usersList[Math.floor(Math.random() * usersList.length)];
-        console.log('Random User:', randomUser);
+        console.log('Random User:', JSON.stringify(randomUser, null, 2));
 
         setUser(randomUser);
         setLoading(false);
@@ -83,6 +83,12 @@ const styles = StyleSheet.create({
   userDetails: {
     fontSize: 18,
     marginVertical: 10,
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 20,
   },
   buttonsContainer: {
     flexDirection: 'row',
