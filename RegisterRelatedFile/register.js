@@ -13,7 +13,7 @@ const RegisterScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleRegister = async () => {
-    if (!email.toLowerCase().endsWith('@ucl.ac.uk')) {
+    if (!isValidUclEmail(email)) {
       Alert.alert('error', 'Please use ucl email');
       return;
     }
@@ -51,5 +51,10 @@ const RegisterScreen = ({ navigation }) => {
     />
   );
 };
+
+function isValidUclEmail(email) {
+  const UCL_EMAIL_REGEX = /^[^\s@]+@ucl\.ac\.uk$/i;
+  return UCL_EMAIL_REGEX.test(email);
+}
 
 export default RegisterScreen;
